@@ -2,9 +2,11 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/cetz-plot:0.1.3"
 #import "@preview/lilaq:0.5.0" as lq
+#import "@preview/oxifmt:1.0.0": strfmt
 
-#let primary-color = rgb("#c91437")
-#let secondary-color = rgb("#808387")
+
+#let primary-color = rgb("#9c629f")
+#let secondary-color = rgb("#2b6eb2")
 
 
 #let darkred = rgb("#b00008")

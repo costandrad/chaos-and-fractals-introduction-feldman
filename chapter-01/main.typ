@@ -5,15 +5,15 @@
 #show: conf.with(
   author: [Igo da Costa Andrade],
   book: (
-    title: [Mecânica Clássica],
-    subtitle: none,
-    year: 2013,
-    press: "Bookman",
-    address: "Porto Alegre",
+    title: [Chaos and Fractals],
+    subtitle: [An Elementary Introduction],
+    year: 2012,
+    press: "Oxford University Press",
+    address: "Oxford",
     authors: (
       (
-        name: "John R. Taylor",
-        short-name: "Taylor, J. R.",
+        name: "David P. Feldman",
+        short-name: "Feldman, D. P.",
       ),
     ),
     chapter: (
