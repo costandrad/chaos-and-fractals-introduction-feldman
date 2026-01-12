@@ -423,3 +423,69 @@
         )
       ]    
     ])
+
++ Seja $f(x) = x^2$. Determine uma expressão algébrica para:
+  #set enum(numbering: "(a)")
+  + $f^((2))(x)$
+    #solution([
+      $
+        f^((2)) = f(f(x)) = f(x^2) = (x^2)^2 = x^(2 dot 2) = x^(2^2) = x^4
+      $
+    ])
+
+  + $f^((3))(x)$
+    #solution([
+      $
+        f^((3)) = f(f^((2))(x)) = f(x^4) = (x^4)^2 = x^(4 dot 2) = x^(2^3) = x^8
+      $
+    ])
+
+  + $f^((n))(x)$
+    #solution([
+      Os resultados anteriores sugerem a seguinte fórmula geral para $f^((n))(x)$: $ x^(2^n) $
+      Para $n = 1$, a fórmula proposta é imediatamente verdadeira. Suponhamos que para algum $k >= 1$, a fórmula proposta seja verdadeira. Então, para $n = k + 1$, temos:
+      $
+        f^((k+ 1)) = f(f^(k)(x)) = f(x^(2^k)) = (x^(2^k))^2 = x^(2^k dot 2) = x^(2^k dot 2^1) = x^(2^(k + 1))
+      $
+
+      Logo, pelo Princípio de Indução Matemática, a fórmula
+      $
+        f^((n))(x) = x^(2^(n))
+      $
+      é verdadeira.
+    ])
+
++ Seja $h(x) = 3x - 1$. Determine o valor numérico de:
+  #set enum(numbering: "(a)")
+  + $h^((2))(1)$
+    #solution([
+      $
+        h(1) = 3 dot 1 - 1 = 2 => h^((2))(1) = h(2) = 3 dot 2 - 1 = 5
+      $
+    ])
+
+  + $h^((2))(3)$
+    #solution([
+      $
+        h(1) = 3 dot 3 - 1 = 8 => h^((2))(3) = h(8) = 3 dot 8 - 1 = 23
+      $
+    ])
+
+  + $h^((4))(2/3)$
+    #solution([
+      $
+        h(2/3) = 3 dot 2/3 - 1 = 1 &=> h^((2))(2/3) = h(h(2/3)) = h(1) = 3 dot 1 - 1 = 2\
+        &=> h^((3))(2/3) = h(h^((2))(2/3)) = h(2) = 3 dot 2 - 1 = 5\
+        &=> h^((4))(2/3) = h(h^((3))(2/3)) = h(5) = 3 dot 5 - 1 = 14
+      $
+    ])
+
+  + $h^((3))(2)$
+    #solution([
+      $
+        h(2) = 3 dot 2 - 1 = 5 &=> h^((2))(2) = h(h(2)) = h(5) = 3 dot 5 - 1 = 14\
+        &=> h^((3))(2) = h(h^((2))(2)) = h(14) = 3 dot 14 - 1 = 41
+      $
+    ])
+
++ Seja $g(x)$
