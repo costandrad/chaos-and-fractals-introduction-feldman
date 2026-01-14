@@ -57,7 +57,7 @@
   let book_authors = book.authors.flatten().map(a => a.short-name).join("; ")
   let book_subtitle = if book.subtitle != none {". : #book.subtitle"} else {""}
 
-  let references = text(weight: "light")[#upper(book_authors) #text(weight: "bold")[#book.title]#book_subtitle. #book.address: #book.press, #book.year.]
+  let references = text(weight: "light")[#upper(book_authors) #text(weight: "bold")[#book.title]. #book.subtitle. #book.address: #book.press, #book.year.]
 
 
   set page(

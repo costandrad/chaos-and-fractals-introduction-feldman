@@ -488,4 +488,110 @@
       $
     ])
 
-+ Seja $g(x)$
++ Seja $g(x) = x^2 + 1$. Determine o valor numérico de:
+  #set enum(numbering: "(a)")
+  + $g^((2))(1)$
+    #solution([
+      $
+        g(1) = 1^2 + 1 = 2 => g^((2))(1) = g(g(1)) = g(2) = 2^2 + 1= 5
+      $
+    ])
+
+  + $g^((2))(3)$
+    #solution([
+      $
+        g(3) = 3^2 + 1 = 10 => g^((2))(3) = g(g(3)) = g(10) = 10^2 + 1= 101
+      $
+    ])
+
+  + $g^((4))(0)$
+    #solution([
+      $
+        g(0) = 0^2 + 1 = 1 
+          &=> g^((2))(0) &=  &g(g(0))       &=& g(1) &=& 1^2 + 1 &=& &2\
+          &=> g^((3))(0) &=  &g(g^((2))(0)) &=& g(2) &=& 2^2 + 1 &=& &5\
+          &=> g^((4))(0) &=  &g(g^((3))(0)) &=& g(5) &=& 5^2 + 1 &=& 2&6\
+      $
+    ])
+
+  + $g^((3))(2)$
+      #solution([
+        $
+          g(2) = 2^2 + 1 = 5 
+            &=> g^((2))(2) &=  &g(g(2))       &=& g(5) &=& 5^2 + 1 &=& &26\
+            &=> g^((3))(2) &=  &g(g^((2))(2)) &=& g(26) &=& 26^2 + 1 &=& 6&76
+        $
+      ])
+
++ Seja $f(x) = x^2 - 1$. Determine uma expressão algébrica para $f^((2))(x)$.
+  #solution([
+    $
+      f(x) = x^2 - 1 &=> f^((2))(x) = f(f(x)) = (x^2 - 1)^2 - 1\
+          &=> f^((2))(x) = x^4 - 2x^2 + 1 - 1\
+          &=> f^((2))(x) = x^4 - 2x^2
+    $
+  ])
+
++ Seja $f(x) = 3x - 1$. Determine uma expressão algébrica para $f^((2))(x)$.
+  #solution([
+    $
+      f(x) = 3x - 1 &=> f^((2))(x) = f(f(x)) = 3 (3x - 1) - 1\
+      &=> f^((2))(x) = 9x - 4
+    $
+  ])
+
++ Consideremos novamente a função para população de coelhos do capítulo anterior. A função é mostrada na Fig. 2.2. Determine:
+
+  #figure(
+    image("assets/images/figura_02-02.png", width: 55%)
+  )
+  #set enum(numbering: "(a)")
+  + $P(50)$
+  + $P^((2))(75)$
+  + $P^((3)) (10)$
+
+  
+
+  #solution([
+    $
+      P(50) approx 90\
+      P(75) approx 90 => P^((2))(75) = P(P(75)) = P(90) approx 70\
+      P(10) approx 50 => P^((2))(10) = P(50) approx 90 => P^((3))(10) = P(P^((2))(10)) = p(90) approx 70
+    $
+  ])
+
++ Considere a função $f$ definida na Fig. 2.3. Determine:
+  #figure(
+    image("assets/images/figura_02-03.png", width: 55%)
+  )
+  #set enum(numbering: "(a)")
+  + $f(-5)$
+    #solution([
+      $
+        f(-5) = 12
+      $
+    ])
+  + $f^((2))(-5)$
+    #solution([
+      $
+        f^((2))(-5) = f(f(-5)) = f(12) approx 5
+      $
+    ])
+  + As primeiras quatro iterações de $0$.
+    #solution([
+      $
+        f(0) approx 10\
+        f^((2))(0) = f(10) = 6\
+        f^((3))(0) = f(f^((2))(0)) = f(6) approx 7\
+        f^((4))(0) = f(f^((3))(0)) = f(7) approx 7,5
+      $
+    ])
+  + As primeiras quatro iterações de $-15$.
+    #solution([
+      $
+        f(-15) approx 16\
+        f^((2))(-15) = f(16) = 3\
+        f^((3))(-15) = f(f^((2))(-15)) = f(3) approx 9\
+        f^((4))(-15) = f(f^((3))(-15)) = f(9) approx 7
+      $
+    ])
