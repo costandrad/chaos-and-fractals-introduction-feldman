@@ -595,3 +595,183 @@
         f^((4))(-15) = f(f^((3))(-15)) = f(9) approx 7
       $
     ])
+
++ Considere a função $f(x)$ mostrada na Fig. 2.4. Determine:
+  #figure(
+    image("assets/images/figura_02-04.png", width: 55%)
+  )
+
+  #set enum(numbering: "(a)")
+  + As primeiras três iterações de $0.5$.
+    #solution([
+      $
+        f(0,5) approx 1,3\
+        f^((2))(0,5) = f(f(0,5)) = f(1,3) approx 0,7\
+        f^((3))(0,5) = f(f^((2))(0,5)) = f(0,7) approx 1,1
+      $
+    ])
+
+  + As primeiras três iterações de $2.0$.
+    #solution([
+      $
+        f(2,0) approx 0,25\
+        f^((2))(2,0) = f(f(2,0)) = f(0,25) approx 1,1\
+        f^((3))(2,0) = f(f^((2))(2,0)) = f(1,1) approx 0,8
+      $
+    ])
+
++ Seja $g$ a função elevar ao quadrado: $g(x) = x^2$.
+  
+  #set enum(numbering: "(a)")
+  + Calcule as cinco primeiras iterações de $2$.
+    #solution([
+      $
+        g(2) = 2^2 = 4\
+        g^((2))(2) = g(g(2)) = g(4) = 4^2 = 16\
+        g^((3))(2) = g(g^((2))(2)) = g(16) = 16^2 = 256\
+        g^((4))(2) = g(g^((3))(2)) = g(256) = 256^2 = #calc.pow(256, 2)\
+        g^((5))(2) = g(g^((4))(2)) = g(#calc.pow(256, 2)) = #calc.pow(256, 2)^2 = #calc.pow(calc.pow(256, 2), 2)\
+      $
+    ])
+
+  + O que você acha que acontece com $g^((n))(2)$ quando $n$ torna-se grande?
+    #solution([
+      Para $n$ grande, $g^((n))(2)$ tende ao infinito.
+    ])
+
+  + Calcule as primeiras cinco iterações de $1$.
+    #solution([
+      $
+        g(1) = 1^2 = 1\
+        g^((2))(1) = g(g(1)) = g(1) = 1^2 = 1\
+        g^((3))(1) = g(g^((2))(1)) = g(1) = 1^2 = 1\
+        g^((4))(1) = g(g^((3))(1)) = g(1) = 1^2 = 1\
+        g^((5))(1) = g(g^((4))(1)) = g(1) = 1^2 = 1\
+      $
+    ])
+
+  + O que você acha que acontece com $g^((n))(1)$ quando $n$ torna-se grande?
+    #solution([
+      Para $n$ grande, $g^((n))(1)$ permanece constante e igual a 1.
+    ])
+
+  + Calcule as cinco primeiras iterações de $3/4$.
+    #solution([
+      #let g(x) = calc.pow(x, 2)
+      #let orbita = (3/4, )
+      #for i in range(5) {
+        orbita.push(g(orbita.last()))
+      }
+
+      Seja a semente $x_0 = 3/4 = 0,75$, então as cinco primeiras iterações da órbita de $x_0$ são:
+      #for (i, xi) in orbita.enumerate() {
+        if i == 0 {
+          $ x_#i =  #fmt(xi, digits: 4) $
+        } else {
+          let j = i - 1
+          if i == 1 {
+            $ x_#i = g(x_(#j)) = g(#fmt(orbita.at(j), digits: 4)) = #fmt(xi, digits: 4) $
+          } else {
+            $ x_#i = g^((#i))(x_(0)) = g(g^((#j))(x_0)) = g(g^((#j))(#fmt(orbita.at(0), digits: 4))) = g(#fmt(orbita.at(j), digits: 4))= #fmt(xi, digits: 4) $
+          }
+          
+        }
+      }
+    ])
+
+  + O que você acha que aconcete com $g^((n))(3/4)$ quando $n$ torna-se grande?
+    #solution([
+      Para $n$ grande, $g^((n))(3/4)$ tende a zero.
+    ])
+
++ Seja $h$ a função raiz quadrada: $h(x) = sqrt(x)$.
+  #set enum(numbering: "(a)")
+  + Calcule as cinco primeiras iterações de $2$.
+    #solution([
+      #let h(x) = calc.sqrt(x)
+
+      #let orbita = (2,)
+      #for i in range(5) {
+        orbita.push(h(orbita.last()))
+      }
+
+      Seja a semente $x_0 = 2$, então as cinco primeiras iterações da órbita de $x_0$ são:
+      #for (i, xi) in orbita.enumerate() {
+        if i == 0 {
+          $ x_#i =  #fmt(xi, digits: 4) $
+        } else {
+          let j = i - 1
+          if i == 1 {
+            $ x_#i = h(x_(#j)) = h(#fmt(orbita.at(j), digits: 4)) = #fmt(xi, digits: 4) $
+          } else {
+            $ x_#i = h^((#i))(x_(0)) = h(h^((#j))(x_0)) = h(h^((#j))(#fmt(orbita.at(0), digits: 4))) = h(#fmt(orbita.at(j), digits: 4))= #fmt(xi, digits: 4) $
+          }
+          
+        }
+      }
+    ])
+
+  + O que você acha que acontece com $h^((n)) (2)$ quanto $n$ torna-se grande?
+    #solution([
+      Para $n$ grande, $h^((n))(1)$ decresce e tende a $1$.
+    ])
+
+  + Calcule as cinco primeiras iterações de $1$.
+    #solution([
+      #let h(x) = calc.sqrt(x)
+
+      #let orbita = (1,)
+      #for i in range(5) {
+        orbita.push(h(orbita.last()))
+      }
+
+      Seja a semente $x_0 = 1$, então as cinco primeiras iterações da órbita de $x_0$ são:
+      #for (i, xi) in orbita.enumerate() {
+        if i == 0 {
+          $ x_#i =  #fmt(xi, digits: 4) $
+        } else {
+          let j = i - 1
+          if i == 1 {
+            $ x_#i = h(x_(#j)) = h(#fmt(orbita.at(j), digits: 4)) = #fmt(xi, digits: 4) $
+          } else {
+            $ x_#i = h^((#i))(x_(0)) = h(h^((#j))(x_0)) = h(h^((#j))(#fmt(orbita.at(0), digits: 4))) = h(#fmt(orbita.at(j), digits: 4))= #fmt(xi, digits: 4) $
+          }
+          
+        }
+      }
+    ])
+
+  + O que você acha que acontece com $h^((n)) (1)$ quanto $n$ torna-se grande?
+    #solution([
+      Para $n$ grande, $h^((n))(1)$ permanece constante e igual a $1$.
+    ])
+
+  + Calcule as cinco primeiras iterações de $3/4$.
+    #solution([
+      #let h(x) = calc.sqrt(x)
+
+      #let orbita = (3/4,)
+      #for i in range(5) {
+        orbita.push(h(orbita.last()))
+      }
+
+      Seja a semente $x_0 = 3/4 = 0,75$, então as cinco primeiras iterações da órbita de $x_0$ são:
+      #for (i, xi) in orbita.enumerate() {
+        if i == 0 {
+          $ x_#i =  #fmt(xi, digits: 4) $
+        } else {
+          let j = i - 1
+          if i == 1 {
+            $ x_#i = h(x_(#j)) = h(#fmt(orbita.at(j), digits: 4)) = #fmt(xi, digits: 4) $
+          } else {
+            $ x_#i = h^((#i))(x_(0)) = h(h^((#j))(x_0)) = h(h^((#j))(#fmt(orbita.at(0), digits: 4))) = h(#fmt(orbita.at(j), digits: 4))= #fmt(xi, digits: 4) $
+          }
+          
+        }
+      }
+    ])
+
+  + O que você acha que acontece com $h^((n)) (3/4)$ quanto $n$ torna-se grande?
+    #solution([
+      Para $n$ grande, $h^((n))(1)$ cresce e tende a $1$.
+    ])
